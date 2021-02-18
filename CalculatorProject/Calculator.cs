@@ -44,7 +44,7 @@ namespace CalculatorProject
 
             ListCalculation _addCalculation = new ListCalculation();
 
-            _addCalculation.CreateListCalculation(_calculation);
+            _addCalculation.AddCalculation(_calculation);
 
             //AddCalculation(_calculation);
         }
