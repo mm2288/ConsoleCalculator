@@ -34,22 +34,43 @@ namespace CalculatorProject.Models
             //this stores the operation to be performed on A and B
             BulkOperation = calculation;
         }
-        //constructor with 0 param
 
+        public static Calculation Create(double a, double b, Func<double, double, double> _operation)
+        {
+            var _calculation = new Calculation(a, b, _operation);
+
+            return _calculation;
+        }
+
+        public static Calculation Create(List<double> listOfValues, Func<List<double>, double> operation)
+        {
+            var _calculation = new Calculation(listOfValues, operation);
+
+            return _calculation;
+        }
+
+        //constructor with 0 param
         public Calculation() { }
 
         //This calls whatever operation was stored i.e. mult, div, add, sub and returns the answer
-        public double GetResult()
+        /*public double GetResult()
         {
-            if(BulkOperation != null)
+            if (BulkOperation != null)
             {
                 return BulkOperation(ListOfValues);
-            } else
+            }
+            else
             {
                 return Operation(A, B);
             }
             
 
+        }*/
+
+        public double getResult()
+        {
+            return Operation(A, B);
         }
+
     }
 }
