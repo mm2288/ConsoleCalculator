@@ -1,4 +1,5 @@
 ﻿using CalculatorProject.CalculatorFunctions;
+using CalculatorProject.Interfaces;
 using CalculatorProject.Models;
 using System;
 using System.Collections.Generic;
@@ -17,16 +18,15 @@ namespace CalculatorProject
 
         public Calculator(List<double> listOfValues, Func<List<double>, double> _operation)
         {
-            BulkCalculation _bulkCalculation = new BulkCalculation();
+            ICreateBulkCalculation _bulkOperation = new BulkCalculation();
 
-            _bulkCalculation.CreateBulkCalculation(listOfValues, _operation);
-
-            //CreateCalculation(listOfValues, _operation);
+            _bulkOperation.CreateBulkCalculation(listOfValues, _operation);
 
         }
+
         public Calculator(double a, double b, Func<double, double, double> _operation)
         {
-            ListCalculation _listCalculation = new ListCalculation();
+            ICreateListCalculation _listCalculation = new ListCalculation();
 
             _listCalculation.CreateListCalculation(a, b, _operation);
 
@@ -36,13 +36,13 @@ namespace CalculatorProject
 
         public void Calculate(double a, double b, Func<double, double, double> op, Calculation _calculation)
         {
-            ListCalculation _listCalculation = new ListCalculation();
+            ICreateListCalculation _listCalculation = new ListCalculation();
 
             _listCalculation.CreateListCalculation(a, b, op);
 
             //CreateCalculation(a, b, op);
 
-            ListCalculation _addCalculation = new ListCalculation();
+            IAddListCalculation _addCalculation = new ListCalculation();
 
             _addCalculation.AddCalculation(_calculation);
 

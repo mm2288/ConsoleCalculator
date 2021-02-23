@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using CalculatorProject.Interfaces;
 
 namespace CalculatorProject.Models
 {
+    /*
     interface ICreateBulkCalculation
     {
         void CreateBulkCalculation();
@@ -13,6 +15,7 @@ namespace CalculatorProject.Models
     {
         void AddBulkCalculation();
     }
+    */
 
     class BulkCalculation : ICreateBulkCalculation, IAddBulkCalculation 
     {

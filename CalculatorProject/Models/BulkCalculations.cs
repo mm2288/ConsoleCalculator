@@ -9,7 +9,7 @@ namespace CalculatorProject.Models
     {
         public BulkCalculations()
         {
-            //store a list of values for bulk operations
+            // store a list of values for bulk operations
             public List<double> ListOfValues { get; set; }
             //store a bulk operations function
             public Func<List<double>, double> BulkOperation { get; set; }
@@ -27,6 +27,6 @@ namespace CalculatorProject.Models
             {
                 return BulkOperation(ListOfValues);
             }
-        }
+        }   
     }
 }

@@ -1,23 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using CalculatorProject.Interfaces;
 
 namespace CalculatorProject.Models
 {
+    /*
     interface ICreateListCalculation
     {
         void CreateListCalculation();
+        //Calculation CreateListCalculation();
     }
 
     interface IAddListCalculation
     {
         void AddCalculation();
     }
+    */
 
     class ListCalculation : ICreateListCalculation, IAddListCalculation
     {
         public List<Calculation> Calculations = new List<Calculation>();
-
+        
         public Calculation CreateListCalculation(double a, double b, Func<double, double, double> _operation)
         {
             //calls respective create method
@@ -26,6 +30,7 @@ namespace CalculatorProject.Models
             return _calculation;
             //calls add method
         }
+        
 
         public void AddCalculation(Calculation _calculation)
         {
