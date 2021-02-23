@@ -5,19 +5,6 @@ using CalculatorProject.Interfaces;
 
 namespace CalculatorProject.Models
 {
-    /*
-    interface ICreateListCalculation
-    {
-        void CreateListCalculation();
-        //Calculation CreateListCalculation();
-    }
-
-    interface IAddListCalculation
-    {
-        void AddCalculation();
-    }
-    */
-
     class ListCalculation : ICreateListCalculation, IAddListCalculation
     {
         public List<Calculation> Calculations = new List<Calculation>();

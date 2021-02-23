@@ -5,18 +5,6 @@ using CalculatorProject.Interfaces;
 
 namespace CalculatorProject.Models
 {
-    /*
-    interface ICreateBulkCalculation
-    {
-        void CreateBulkCalculation();
-    }
-
-    interface IAddBulkCalculation
-    {
-        void AddBulkCalculation();
-    }
-    */
-
     class BulkCalculation : ICreateBulkCalculation, IAddBulkCalculation 
     {
         public List<Calculation> Calculations = new List<Calculation>();

@@ -11,7 +11,6 @@ namespace CalculatorProject
 
         public List<Calculation> Calculations = new List<Calculation>();
 
-
         //Calculator Constructor - A constructor is automaticly called when a class is instantiated
 
         public Calculator() { }
@@ -21,7 +20,6 @@ namespace CalculatorProject
             ICreateBulkCalculation _bulkOperation = new BulkCalculation();
 
             _bulkOperation.CreateBulkCalculation(listOfValues, _operation);
-
         }
 
         public Calculator(double a, double b, Func<double, double, double> _operation)
@@ -29,9 +27,6 @@ namespace CalculatorProject
             ICreateListCalculation _listCalculation = new ListCalculation();
 
             _listCalculation.CreateListCalculation(a, b, _operation);
-
-            //CreateCalculation(a, b, _operation);
-
         }
 
         public void Calculate(double a, double b, Func<double, double, double> op, Calculation _calculation)
@@ -40,13 +35,9 @@ namespace CalculatorProject
 
             _listCalculation.CreateListCalculation(a, b, op);
 
-            //CreateCalculation(a, b, op);
-
             IAddListCalculation _addCalculation = new ListCalculation();
 
             _addCalculation.AddCalculation(_calculation);
-
-            //AddCalculation(_calculation);
         }
 
         //old code
