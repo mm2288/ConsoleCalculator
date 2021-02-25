@@ -36,45 +36,46 @@ namespace CalculatorProject.Tests
             Assert.AreEqual(_c, 3);
         }
 
-        [TestMethod()]
+        //[TestMethod()]
         public void CalculatorIntantiationWithParametersTest()
         {
             double _a = 1;
             double _b = 2;
             Func<double, double, double> _operations = Operations.Multiplication;
 
-            Calculator _calculator = new Calculator(_a, _b, _operations);
+            Calculator _calculator = new Calculator(/*_a, _b, _operations*/);
             double _result = _calculator.Calculations[0].getResult();
             Assert.AreEqual(2, _result);
         }
         
-        //[TestMethod()]
-        /*public void CreateCalculationTest()
+        [TestMethod()]
+        public void CreateCalculationTest()
         {
             double _a = 2;
             double _b = 2;
             Func<double, double, double> _operations = Operations.Division;
             Calculator _calculator = new Calculator();
             //_calculator.CreateCalculation(_a, _b, _operations);
-            _calculator.Calculator(_a, _b, _operations);
+            _calculator.ListCalculator(_a, _b, _operations);
             _operations = Operations.Division;
-            _calculator.CreateCalculation(_a, _b, _operations);
+            _calculator.ListCalculator(_a, _b, _operations);
+            //_calculator.CreateCalculation(_a, _b, _operations);
 
-            
+
             Assert.AreEqual(2, _calculator.Calculations[0].getResult());
             Assert.AreEqual(.5, _calculator.Calculations[1].getResult());
 
-            the delegate is run in the foreach
+            /*the delegate is run in the foreach
             _calculator.Calculations.ForEach(delegate (Calculation calculation)
             {             
                 Assert.AreEqual(2, calculation.GetResult());  
        
-            });
+            });*/
             
-        }*/
+        }
     
-        //[TestMethod()]
-        /*public void SumListTest()
+        [TestMethod()]
+        public void SumListTest()
         {
             //initialize a new list of numbers
             List<double> _values = new List<double> { 1, 2, 3, 4, 5, 6 };
@@ -82,9 +83,10 @@ namespace CalculatorProject.Tests
             Func<List<double>, double> _operations = ListOperations.SumList;
 
             Calculator _calculator = new Calculator();
-            _calculator.CreateCalculation(_values, _operations);
+            //_calculator.CreateCalculation(_values, _operations);
+            _calculator.BulkCalculator(_values, _operations);
             Assert.AreEqual(21, _calculator.Calculations[0].getResult());
-        }*/
+        }
 
     }
 }

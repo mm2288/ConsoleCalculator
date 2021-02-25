@@ -15,14 +15,14 @@ namespace CalculatorProject
 
         public Calculator() { }
 
-        public Calculator(List<double> listOfValues, Func<List<double>, double> _operation)
+        public void BulkCalculator(List<double> listOfValues, Func<List<double>, double> _operation)
         {
             ICreateBulkCalculation _bulkOperation = new BulkCalculation();
 
             _bulkOperation.CreateBulkCalculation(listOfValues, _operation);
         }
 
-        public Calculator(double a, double b, Func<double, double, double> _operation)
+        public void ListCalculator(double a, double b, Func<double, double, double> _operation)
         {
             ICreateListCalculation _listCalculation = new ListCalculation();
 
@@ -39,6 +39,8 @@ namespace CalculatorProject
 
             _addCalculation.AddCalculation(_calculation);
         }
+
+
 
         //old code
         /*
