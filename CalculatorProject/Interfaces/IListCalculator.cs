@@ -1,9 +1,13 @@
 ﻿using System;
+using CalculatorProject.Models;
+
 namespace CalculatorProject.Interfaces
 {
     public interface IListCalculator
     {
-        string ListCalculator();
+        Calculation ListCalculator(double a, double b, Func<double, double, double> _operation);
+
+        void ListCalculator(Calculation _calculation);
     }
 
 }
