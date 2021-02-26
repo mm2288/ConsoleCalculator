@@ -8,7 +8,29 @@ namespace CalculatorProject
 {
     public class Calculator
     {
+        public List<Calculation> Calculations = new List<Calculation>();
 
+        public void Main()
+        {
+            // The client code can work with any concrete factory class.
+            Console.WriteLine("Client: Testing client code with the first factory type...");
+            ClientMethod(new CreateLists());
+            Console.WriteLine();
+
+            Console.WriteLine("Client: Testing the same client code with the second factory type...");
+            ClientMethod(new CreateBulks());
+        }
+
+        public void ClientMethod(ICalculations factory)
+        {
+            var productA = factory.CreateList();
+            var productB = factory.CreateBulk();
+
+            //Console.WriteLine(productB.BulkCalculator());
+            //Console.WriteLine(productB.AnotherBulkCalculator(productA));
+        }
+
+        /*
         public List<Calculation> Calculations = new List<Calculation>();
 
         //Calculator Constructor - A constructor is automaticly called when a class is instantiated
@@ -39,7 +61,7 @@ namespace CalculatorProject
 
             _addCalculation.AddCalculation(_calculation);
         }
-
+        */
 
 
         //old code

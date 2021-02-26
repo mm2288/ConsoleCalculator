@@ -4,7 +4,7 @@ using CalculatorProject.Interfaces;
 
 namespace CalculatorProject.Models
 {
-    class CreateList : IListCalculator
+    public class CreateList : IListCalculator
     {
         /*
         public string ListCalculator()

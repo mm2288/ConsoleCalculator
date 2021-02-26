@@ -21,8 +21,8 @@ namespace CalculatorProject.Models
             var productA = factory.CreateList();
             var productB = factory.CreateBulk();
 
-            Console.WriteLine(productB.BulkCalculator());
-            Console.WriteLine(productB.AnotherBulkCalculator(productA));
+            //Console.WriteLine(productB.BulkCalculator());
+            //Console.WriteLine(productB.AnotherBulkCalculator(productA));
         }
     }
 

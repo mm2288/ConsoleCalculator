@@ -4,7 +4,7 @@ using CalculatorProject.Interfaces;
 
 namespace CalculatorProject.Models
 {
-    class CreateBulk : IBulkCalculator
+    public class CreateBulk : IBulkCalculator
     {
         /*
         public string BulkCalculator()

@@ -43,8 +43,16 @@ namespace CalculatorProject.Tests
             double _b = 2;
             Func<double, double, double> _operations = Operations.Multiplication;
 
-            Calculator _calculator = new Calculator(/*_a, _b, _operations*/);
+            Calculator _calculator = new Calculator();
+
+            CreateList obj = new CreateList();
+
+            IListCalculator c = obj;
+
+            c.ListCalculator(_a, _b, _operations);
+
             double _result = _calculator.Calculations[0].getResult();
+
             Assert.AreEqual(2, _result);
         }
         
@@ -56,10 +64,16 @@ namespace CalculatorProject.Tests
             Func<double, double, double> _operations = Operations.Division;
             Calculator _calculator = new Calculator();
             //_calculator.CreateCalculation(_a, _b, _operations);
-            _calculator.ListCalculator(_a, _b, _operations);
-            _operations = Operations.Division;
-            _calculator.ListCalculator(_a, _b, _operations);
+            //_calculator.ListCalculator(_a, _b, _operations);
+            //_operations = Operations.Division;
+            //_calculator.ListCalculator(_a, _b, _operations);
             //_calculator.CreateCalculation(_a, _b, _operations);
+
+            CreateList obj = new CreateList();
+
+            IListCalculator c = obj;
+
+            c.ListCalculator(_a, _b, _operations);
 
 
             Assert.AreEqual(2, _calculator.Calculations[0].getResult());
@@ -84,7 +98,14 @@ namespace CalculatorProject.Tests
 
             Calculator _calculator = new Calculator();
             //_calculator.CreateCalculation(_values, _operations);
-            _calculator.BulkCalculator(_values, _operations);
+            //_calculator.BulkCalculator(_values, _operations);
+
+            CreateBulk obj = new CreateBulk();
+
+            IBulkCalculator c = obj;
+
+            c.BulkCalculator(_values, _operations);
+
             Assert.AreEqual(21, _calculator.Calculations[0].getResult());
         }
 
