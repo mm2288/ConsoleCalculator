@@ -10,8 +10,42 @@ namespace CalculatorProject
     {
         public List<Calculation> Calculations = new List<Calculation>();
 
+        public Calculator() { }
+
+        /*Strategy*/
+
+        private IListCalculator _listCalculator;
+
+        private IBulkCalculator _bulkCalculator;
+
+        public Calculator(IListCalculator listCalculator, IBulkCalculator bulkCalculator)
+        {
+            this._listCalculator = listCalculator;
+
+            this._bulkCalculator = bulkCalculator;
+        }
+
+        public void SetListCalculator(IListCalculator listCalculator)
+        {
+            this._listCalculator = listCalculator;
+        }
+
+        public void SetBulkCalculator(IBulkCalculator bulkCalculator)
+        {
+            this._bulkCalculator = bulkCalculator;
+        }
+        /*end strategy*/
+
         public void Main()
         {
+            //strategy
+            var listCalculator = new Calculator();
+            listCalculator.SetListCalculator(new CreateList());
+
+            var bulkCalculator = new Calculator();
+            bulkCalculator.SetBulkCalculator(new CreateBulk());
+            //end strategy
+
             // The client code can work with any concrete factory class.
             Console.WriteLine("Client: Testing client code with the first factory type...");
             ClientMethod(new CreateLists());
