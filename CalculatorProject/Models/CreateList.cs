@@ -6,13 +6,6 @@ namespace CalculatorProject.Models
 {
     public class CreateList : IListCalculator
     {
-        /*
-        public string ListCalculator()
-        {
-            return "The result of the product A1.";
-        }
-        */
-
         public List<Calculation> Calculations = new List<Calculation>();
 
         public Calculation ListCalculator(double a, double b, Func<double, double, double> _operation)

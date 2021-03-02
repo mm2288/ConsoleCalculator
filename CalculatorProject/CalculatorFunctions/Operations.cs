@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 //loading the LINQ functionality
+using System.Linq;
 namespace CalculatorProject.CalculatorFunctions
 {
     public class Operations
