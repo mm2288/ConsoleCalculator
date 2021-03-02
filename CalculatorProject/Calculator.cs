@@ -39,6 +39,19 @@ namespace CalculatorProject
 
         public void Main()
         {
+
+
+
+
+
+
+
+
+
+
+
+
+
             //strategy
             /*
             var listCalculator = new Calculator();
@@ -50,56 +63,22 @@ namespace CalculatorProject
             //end strategy
 
             // The client code can work with any concrete factory class.
-            Console.WriteLine("Client: Testing client code with the first factory type...");
             ClientMethod(new CreateLists());
-            Console.WriteLine();
 
-            Console.WriteLine("Client: Testing the same client code with the second factory type...");
             ClientMethod(new CreateBulks());
         }
 
         public void ClientMethod(ICalculations factory)
         {
-            var productA = factory.CreateList();
-            var productB = factory.CreateBulk();
+            Calculation list = (Calculation)factory.CreateList();
+            Calculation bulk = (Calculation)factory.CreateBulk();
+
+            //var productA = factory.CreateList();
+            //var productB = factory.CreateBulk();
 
             //Console.WriteLine(productB.BulkCalculator());
             //Console.WriteLine(productB.AnotherBulkCalculator(productA));
         }
-
-        /*
-        public List<Calculation> Calculations = new List<Calculation>();
-
-        //Calculator Constructor - A constructor is automaticly called when a class is instantiated
-
-        public Calculator() { }
-
-        public void BulkCalculator(List<double> listOfValues, Func<List<double>, double> _operation)
-        {
-            ICreateBulkCalculation _bulkOperation = new BulkCalculation();
-
-            _bulkOperation.CreateBulkCalculation(listOfValues, _operation);
-        }
-
-        public void ListCalculator(double a, double b, Func<double, double, double> _operation)
-        {
-            ICreateListCalculation _listCalculation = new ListCalculation();
-
-            _listCalculation.CreateListCalculation(a, b, _operation);
-        }
-
-        public void Calculate(double a, double b, Func<double, double, double> op, Calculation _calculation)
-        {
-            ICreateListCalculation _listCalculation = new ListCalculation();
-
-            _listCalculation.CreateListCalculation(a, b, op);
-
-            IAddListCalculation _addCalculation = new ListCalculation();
-
-            _addCalculation.AddCalculation(_calculation);
-        }
-        */
-
 
         //old code
         /*

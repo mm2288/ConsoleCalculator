@@ -81,7 +81,7 @@ namespace CalculatorProject.Tests
             Assert.AreEqual(_c, 5);
         }
 
-        //[TestMethod()]
+        [TestMethod()]
         public void CalculatorIntantiationWithParametersTest()
         {
             double _a = 1;
@@ -94,7 +94,13 @@ namespace CalculatorProject.Tests
 
             IListCalculator c = obj;
 
-            c.ListCalculator(_a, _b, _operations);
+            Calculation cal = c.ListCalculator(_a, _b, _operations);
+
+
+            AddList _addList = new AddList();
+
+            _addList.ListCalculator(cal);
+
 
             double _result = _calculator.Calculations[0].getResult();
 
@@ -123,13 +129,6 @@ namespace CalculatorProject.Tests
 
             Assert.AreEqual(2, _calculator.Calculations[0].getResult());
             Assert.AreEqual(.5, _calculator.Calculations[1].getResult());
-
-            /*the delegate is run in the foreach
-            _calculator.Calculations.ForEach(delegate (Calculation calculation)
-            {             
-                Assert.AreEqual(2, calculation.GetResult());  
-       
-            });*/
             
         }
     
