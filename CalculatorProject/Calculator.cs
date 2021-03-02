@@ -13,37 +13,40 @@ namespace CalculatorProject
         public Calculator() { }
 
         /*Strategy*/
-
+        /*
         private IListCalculator _listCalculator;
 
         private IBulkCalculator _bulkCalculator;
 
         public Calculator(IListCalculator listCalculator, IBulkCalculator bulkCalculator)
         {
-            this._listCalculator = listCalculator;
+            _listCalculator = listCalculator;
 
-            this._bulkCalculator = bulkCalculator;
+            _bulkCalculator = bulkCalculator;
         }
 
         public void SetListCalculator(IListCalculator listCalculator)
         {
-            this._listCalculator = listCalculator;
+            _listCalculator = listCalculator;
         }
 
         public void SetBulkCalculator(IBulkCalculator bulkCalculator)
         {
-            this._bulkCalculator = bulkCalculator;
+            _bulkCalculator = bulkCalculator;
         }
+        */
         /*end strategy*/
 
         public void Main()
         {
             //strategy
+            /*
             var listCalculator = new Calculator();
             listCalculator.SetListCalculator(new CreateList());
 
             var bulkCalculator = new Calculator();
             bulkCalculator.SetBulkCalculator(new CreateBulk());
+            */
             //end strategy
 
             // The client code can work with any concrete factory class.

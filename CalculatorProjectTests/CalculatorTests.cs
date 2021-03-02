@@ -36,6 +36,51 @@ namespace CalculatorProject.Tests
             Assert.AreEqual(_c, 3);
         }
 
+        [TestMethod()]
+        public void SubtractionTest()
+        {
+            //arrange
+            double _a = 5;
+            double _b = 3;
+            double _c;
+
+            //act
+            _c = Subtract.Subtraction(_a, _b);
+
+            //assert
+            Assert.AreEqual(_c, 2);
+        }
+
+        [TestMethod()]
+        public void MultiplicationTest()
+        {
+            //arrange
+            double _a = 2;
+            double _b = 6;
+            double _c;
+
+            //act
+            _c = Multiply.Multiplication(_a, _b);
+
+            //assert
+            Assert.AreEqual(_c, 12);
+        }
+
+        [TestMethod()]
+        public void DivisionTest()
+        {
+            //arrange
+            double _a = 10;
+            double _b = 2;
+            double _c;
+
+            //act
+            _c = Divide.Division(_a, _b);
+
+            //assert
+            Assert.AreEqual(_c, 5);
+        }
+
         //[TestMethod()]
         public void CalculatorIntantiationWithParametersTest()
         {
